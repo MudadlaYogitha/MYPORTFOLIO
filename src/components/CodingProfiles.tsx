@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Code, Trophy, Target, ExternalLink, Star, TrendingUp, Award, Zap } from 'lucide-react';
+import { Code, Trophy, Target, ExternalLink, Star, Zap } from 'lucide-react';
 
 const CodingProfiles = () => {
   const [ref, inView] = useInView({
@@ -21,7 +21,6 @@ const CodingProfiles = () => {
       bgColor: 'bg-gradient-to-br from-orange-50 to-red-50',
       borderColor: 'border-orange-200',
       description: 'Algorithmic Problem Solving',
-      
     },
     {
       platform: 'CodeChef',
@@ -34,7 +33,6 @@ const CodingProfiles = () => {
       bgColor: 'bg-gradient-to-br from-blue-50 to-purple-50',
       borderColor: 'border-blue-200',
       description: 'Competitive Programming',
-      
     }
   ];
 
@@ -69,7 +67,7 @@ const CodingProfiles = () => {
               <div className={`${profile.bgColor} ${profile.borderColor} border-2 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-6 hover:scale-105 relative overflow-hidden`}>
                 
                 {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-5">
+                <div className="absolute inset-0 opacity-5 pointer-events-none">
                   <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-current transform translate-x-8 -translate-y-8"></div>
                   <div className="absolute bottom-0 left-0 w-24 h-24 rounded-full bg-current transform -translate-x-6 translate-y-6"></div>
                 </div>
@@ -101,14 +99,12 @@ const CodingProfiles = () => {
                   </div>
                 </div>
 
-                
-
                 {/* Visit Profile Button */}
                 <a
                   href={profile.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-full bg-gradient-to-r ${profile.color} text-white py-4 px-6 rounded-2xl font-semibold text-center hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 flex items-center justify-center gap-3 group-hover:shadow-2xl`}
+                  className={`z-10 w-full bg-gradient-to-r ${profile.color} text-white py-4 px-6 rounded-2xl font-semibold text-center hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 flex items-center justify-center gap-3 group-hover:shadow-2xl`}
                 >
                   <span>Explore Profile</span>
                   <ExternalLink size={18} />
@@ -148,7 +144,7 @@ const CodingProfiles = () => {
               <div className="text-3xl font-bold mb-2">50+</div>
               <div className="text-gray-300 text-sm">Contests</div>
             </div>
-            <div className="hover-scale-110 transition-transform duration-300 cursor-default">
+            <div className="hover:scale-110 transition-transform duration-300 cursor-default">
               <div className="w-16 h-16 bg-white/10 rounded-2xl mx-auto mb-4 flex items-center justify-center">
                 <Zap size={28} />
               </div>
